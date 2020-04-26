@@ -1,0 +1,16 @@
+version: '3.7' 
+
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:10.5.4
+    ports:
+      - "8096:8096"
+    volumes:
+      - ./config:/config
+      - ./cache:/cache
+      - ./media:/media
+      - /Users/erika/Music:/data/music
+      - /Users/erika/Movies:/data/movies
+      - /Users/erika/Pictures:/data/pictures
+      - /Users/erika/Shows:/data/shows
+    restart: "always"
